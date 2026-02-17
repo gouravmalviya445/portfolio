@@ -13,6 +13,7 @@ import {
   Code,
 } from "lucide-react";
 import { SkillGroup, Project, NavItem } from "../types";
+import path from "node:path";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "#about" },
@@ -73,7 +74,7 @@ export const PROJECTS: Project[] = [
       "Razorpay webhook verification",
       "JWT + RBAC security",
     ],
-    imageUrl: "../public/project_gatherly.png",
+    imageUrl: path.resolve(__dirname, "../public/project_gatherly.png"),
     links: {
       code: [
         {
@@ -103,7 +104,7 @@ export const PROJECTS: Project[] = [
       "Real-time performance feedback",
       "User management via Firebase",
     ],
-    imageUrl: "../public/project_prepwise.png",
+    imageUrl: path.resolve(__dirname, "../public/project_prepwise.png"),
     links: {
       code: [
         {
@@ -124,7 +125,7 @@ export const PROJECTS: Project[] = [
       "Infinite canvas with pan/zoom support",
       "Undo/Redo functionality",
     ],
-    imageUrl: "../public/project_draw.png",
+    imageUrl: path.resolve(__dirname, "../public/project_draw.png"),
     links: {
       code: [
         {
