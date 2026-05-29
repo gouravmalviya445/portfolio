@@ -1,5 +1,11 @@
 
-import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+} from 'lucide-react';
+
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { SiLeetcode } from 'react-icons/si';
+import { TfiEmail } from 'react-icons/tfi';
 
 const Hero: React.FC = () => {
   return (
@@ -40,9 +46,10 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-6 text-neutral-500">
-            <a href="https://github.com/gouravmalviya445" target="_blank" className="hover:text-white transition-colors"><Github size={24} /></a>
-            <a href="https://linkedin.com/in/gouravmalviya" target="_blank" className="hover:text-white transition-colors"><Linkedin size={24} /></a>
-            <a href="mailto:gouravmalviya445@gmail.com" className="hover:text-white transition-colors"><Mail size={24} /></a>
+            <a href="https://github.com/gouravmalviya445" target="_blank" className="hover:text-white transition-colors"><BsGithub size={24} /></a>
+            <a href="https://linkedin.com/in/gouravmalviya" target="_blank" className="hover:text-white transition-colors"><BsLinkedin size={24} /></a>
+            <a href="mailto:gouravmalviya445@gmail.com" className="hover:text-white transition-colors"><TfiEmail size={24} /></a>
+            <a href='https://leetcode.com/u/gouravmalviya445' target="_blank" className="hover:text-white transition-colors"><SiLeetcode size={24}/></a>
           </div>
         </div>
       </div>
