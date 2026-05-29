@@ -1,39 +1,114 @@
-
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { fadeUp, staggerItem, lineGrow, easeOutExpo } from "../motion/variants";
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const footerRef = useRef<HTMLElement>(null);
+  const isInView = useInView(footerRef, { once: true, amount: 0.3 });
+
+  const socialLinks = [
+    { href: "https://github.com/gouravmalviya445", icon: Github, label: "GitHub" },
+    { href: "https://linkedin.com/in/gouravmalviya", icon: Linkedin, label: "LinkedIn" },
+    { href: "mailto:gouravmalviya445@gmail.com", icon: Mail, label: "Email" },
+  ];
+
   return (
-    <footer className="bg-black py-12 border-t border-neutral-900">
+    <footer className="bg-bg py-16 md:py-20 border-t border-borderClr relative z-10" ref={footerRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-          <div>
-            <a href="#" className="text-2xl font-bold text-white mono mb-2 block">GM.dev</a>
-            <p className="text-neutral-500 max-w-xs">
-              Specialized in crafting scalable, secure, and performant digital experiences.
+
+        <motion.div
+          className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+            },
+          }}
+        >
+          {/* Logo & Slogan */}
+          <motion.div variants={fadeUp} className="text-center md:text-left">
+            <a
+              href="#"
+              className="text-2xl font-heading font-black text-primary mb-2 block uppercase tracking-tight hover:text-accent transition-colors duration-200"
+            >
+              GM.dev
+            </a>
+            <p className="text-secondary text-sm max-w-xs leading-relaxed font-sans">
+              Specialized in crafting scalable, highly performant systems and
+              beautiful digital interfaces.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex gap-4">
-            <a href="https://github.com/gouravmalviya445" className="p-3 rounded-xl bg-neutral-900 text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"><Github size={20} /></a>
-            <a href="https://linkedin.com/in/gouravmalviya" className="p-3 rounded-xl bg-neutral-900 text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"><Linkedin size={20} /></a>
-            <a href="mailto:gouravmalviya445@gmail.com" className="p-3 rounded-xl bg-neutral-900 text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"><Mail size={20} /></a>
-          </div>
-
-          <button 
-            onClick={scrollToTop}
-            className="p-3 rounded-full bg-indigo-600/10 text-indigo-500 hover:bg-indigo-600 hover:text-white transition-all group"
+          {/* Social Links */}
+          <motion.div
+            className="flex gap-3"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+              },
+            }}
           >
-            <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
-          </button>
-        </div>
+            {socialLinks.map((social) => (
+              <motion.a
+                key={social.label}
+                variants={staggerItem}
+                href={social.href}
+                target={social.href.startsWith("mailto") ? undefined : "_blank"}
+                rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                className="p-3 rounded-xs border border-borderClr bg-whiteSec text-secondary hover:text-accent hover:border-accent transition-all duration-200"
+                aria-label={social.label}
+                whileHover={{ y: -3, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              >
+                <social.icon size={18} />
+              </motion.a>
+            ))}
+          </motion.div>
 
-        <div className="pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-sm">
+          {/* Scroll to Top */}
+          <motion.button
+            variants={fadeUp}
+            onClick={scrollToTop}
+            className="p-3 rounded-xs border border-borderClr bg-whiteSec text-accent hover:border-accent hover:bg-accent hover:text-whiteSec transition-all duration-250 group cursor-pointer"
+            aria-label="Scroll to Top"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ArrowUp
+              size={20}
+              className="group-hover:-translate-y-0.5 transition-transform duration-200"
+            />
+          </motion.button>
+        </motion.div>
+
+        {/* Divider with line-draw animation */}
+        <motion.div
+          className="h-px bg-borderClr/60"
+          variants={lineGrow}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        />
+
+        {/* Copyright Line */}
+        <motion.div
+          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-secondary text-xs font-sans"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
           <p>© {new Date().getFullYear()} Gourav Malviya. All rights reserved.</p>
-        </div>
+          <p className="tracking-wide">DESIGNED & ENGINEERED IN INDIA</p>
+        </motion.div>
       </div>
     </footer>
   );
