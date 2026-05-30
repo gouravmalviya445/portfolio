@@ -16,6 +16,7 @@ import { SkillGroup, Project, NavItem } from "../types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "#about" },
+  { label: "Stats", href: "#stats" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },

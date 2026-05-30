@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Education from './components/Education';
+import CodingStats from './components/CodingStats';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <main className="relative z-10">
             <Hero />
             <Education />
+            <CodingStats />
             <Skills />
             <Projects />
             <Contact />

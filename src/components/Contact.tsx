@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
               variants={fadeUp}
               className="block font-heading font-bold text-accent text-xs uppercase tracking-widest"
             >
-              04 / GET IN TOUCH
+              05 / GET IN TOUCH
             </motion.span>
             <motion.h2
               className="text-4xl md:text-5xl font-heading font-black text-primary uppercase mt-4 tracking-tight leading-none"

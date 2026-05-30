@@ -1,4 +1,4 @@
-import type { Variants } from "framer-motion";
+import type { Easing, Variants } from "framer-motion";
 
 // ─── Easing Curves ───────────────────────────────────────────
 export const easeOutExpo = [0.16, 1, 0.3, 1] as const;
@@ -13,7 +13,7 @@ export const fadeUp: Variants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: easeOutExpo as unknown as number[],
+      ease: easeOutExpo as unknown as Easing[],
       delay: i * 0.1,
     },
   }),
@@ -38,7 +38,7 @@ export const slideInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: easeOutExpo as unknown as number[] },
+    transition: { duration: 0.8, ease: easeOutExpo as unknown as Easing[] },
   },
 };
 
@@ -48,7 +48,7 @@ export const slideInRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: easeOutExpo as unknown as number[] },
+    transition: { duration: 0.8, ease: easeOutExpo as unknown as Easing[] },
   },
 };
 
@@ -58,7 +58,7 @@ export const scaleReveal: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.7, ease: easeOutQuart as unknown as number[] },
+    transition: { duration: 0.7, ease: easeOutQuart as unknown as Easing[] },
   },
 };
 
@@ -80,7 +80,7 @@ export const staggerItem: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: easeOutExpo as unknown as number[] },
+    transition: { duration: 0.6, ease: easeOutExpo as unknown as Easing[] },
   },
 };
 
@@ -89,7 +89,7 @@ export const maskReveal: Variants = {
   hidden: { clipPath: "inset(100% 0% 0% 0%)" },
   visible: {
     clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 1, ease: easeInOutCubic as unknown as number[] },
+    transition: { duration: 1, ease: easeInOutCubic as unknown as Easing[] },
   },
 };
 
@@ -103,8 +103,8 @@ export const imageReveal: Variants = {
     clipPath: "inset(0% 0% 0% 0%)",
     scale: 1,
     transition: {
-      clipPath: { duration: 1.2, ease: easeInOutCubic as unknown as number[] },
-      scale: { duration: 1.4, ease: easeOutExpo as unknown as number[] },
+      clipPath: { duration: 1.2, ease: easeInOutCubic as unknown as Easing[] },
+      scale: { duration: 1.4, ease: easeOutExpo as unknown as Easing[] },
     },
   },
 };
@@ -114,7 +114,7 @@ export const lineGrow: Variants = {
   hidden: { scaleX: 0, originX: 0 },
   visible: {
     scaleX: 1,
-    transition: { duration: 1, ease: easeOutExpo as unknown as number[] },
+    transition: { duration: 1, ease: easeOutExpo as unknown as Easing[] },
   },
 };
 
@@ -123,7 +123,7 @@ export const navbarVariants: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.4, ease: easeOutExpo as unknown as number[] },
+    transition: { duration: 0.4, ease: easeOutExpo as unknown as Easing[] },
   },
   hidden: {
     y: -100,
@@ -140,7 +140,7 @@ export const charReveal: Variants = {
     opacity: 1,
     transition: {
       duration: 0.7,
-      ease: easeOutExpo as unknown as number[],
+      ease: easeOutExpo as unknown as Easing[],
       delay: 0.3 + i * 0.03,
     },
   }),
