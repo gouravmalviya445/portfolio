@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollDirection, scrollY } = useScrollDirection();
   const isScrolled = scrollY > 20;
+  const RESUME_LINK = "https://drive.google.com/file/d/1f1Tx4ocHLrYdKivKCJcgLB7n6l3i-4tj/view?usp=sharing";
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -53,7 +54,7 @@ const Navbar: React.FC = () => {
           >
             <div className="ml-10 flex items-center space-x-8">
               <a
-                href="https://drive.google.com/file/d/1vSOYz4GK_TPyWEzc3zoWST3pzQM5QSHW/view?usp=sharing"
+                href={RESUME_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative text-sm font-medium text-secondary hover:text-accent transition-colors duration-200 group"
@@ -140,7 +141,7 @@ const Navbar: React.FC = () => {
             >
               <motion.a
                 variants={staggerItem}
-                href="https://drive.google.com/file/d/1vSOYz4GK_TPyWEzc3zoWST3pzQM5QSHW/view?usp=sharing"
+                href={RESUME_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-3 py-3 text-base font-medium text-secondary hover:text-accent border-b border-borderClr/30"
