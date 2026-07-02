@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Open Bot",
-    Stack: ["Node.js", "Vercel AI SDK", "Clack", "Telegraf"],
+    stack: ["Node.js", "Vercel AI SDK", "Clack", "Telegraf"],
     description:
       "Built a multi-mode AI agent for codebase interaction via a rich terminal UI.",
     features: [
