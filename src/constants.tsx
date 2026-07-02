@@ -25,12 +25,12 @@ export const NAV_ITEMS: NavItem[] = [
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: "Languages",
-    skills: ["Go", "JavaScript/TypeScript", "Python", "C/C++", "SQL"],
+    skills: ["Go", "JavaScript", "Python", "C/C++", "SQL"],
     icon: "Code2",
   },
   {
     category: "Frontend",
-    skills: ["React.js", "Next.js", "React Native", "Tailwind CSS"],
+    skills: ["React.js", "Next.js", "HTML", "CSS", "Tailwind CSS"],
     icon: "Layout",
   },
   {
@@ -51,7 +51,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+    skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Mongoose"],
     icon: "Database",
   },
   {
@@ -92,6 +92,28 @@ export const PROJECTS: Project[] = [
       ],
       live: "https://gatherly.gourav.site",
     },
+  },
+  {
+    title: "Open Bot",
+    Stack: ["Node.js", "Vercel AI SDK", "Clack", "Telegraf"],
+    description:
+      "Built a multi-mode AI agent for codebase interaction via a rich terminal UI.",
+    features: [
+      "Multi-mode AI agent with CLI & Telegram",
+      "Autonomous file operations & shell execution",
+      "Human-in-the-loop diff approval system",
+      "Rich terminal UX with Clack & Telegraf",
+      "Vercel AI SDK multi-step agent planning"
+    ],
+    imageUrl: "https://res.cloudinary.com/dbqe9w6w0/image/upload/v1783014669/Screenshot_from_2026-07-02_23-15-30_i4oxhu.png",
+    links: {
+      code: [
+        {
+          label: "Github",
+          url: "https://github.com/gouravmalviya445/open-bot"
+        }
+      ]
+    }
   },
   {
     title: "PrepWise",
