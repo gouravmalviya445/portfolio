@@ -90,7 +90,7 @@ export const PROJECTS: Project[] = [
           url: "https://github.com/gouravmalviya445/event-booking-frontend",
         },
       ],
-      live: "https://gatherly.gourav.site",
+      live: "https://gatherly.gourav.live",
     },
   },
   {
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
           url: "https://github.com/gouravmalviya445/interview_prep_with_ai",
         },
       ],
-      live: "https://prepwise.gourav.site",
+      live: "https://prepwise.gourav.live",
     },
   },
   {
@@ -159,7 +159,7 @@ export const PROJECTS: Project[] = [
           url: "https://github.com/gouravmalviya445/draw-backend",
         },
       ],
-      live: "https://draw.gourav.site",
+      live: "https://draw.gourav.live",
     },
   },
 ];
