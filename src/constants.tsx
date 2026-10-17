@@ -62,6 +62,38 @@ export const SKILL_GROUPS: SkillGroup[] = [
 ];
 
 export const PROJECTS: Project[] = [
+{
+  title: "VidChat",
+  stack: [
+    "Next.js",
+    "Express.js",
+    "PostgreSQL (pgvector)",
+    "Drizzle",
+    "Redis",
+    "Google Gemini API",
+    "Supabase Storage",
+    "FFmpeg"
+  ],
+  description:
+    "A full-stack multimodal Retrieval-Augmented Generation (RAG) system enabling interactive, citation-backed conversations with YouTube and uploaded video content.",
+  features: [
+    "Asynchronous Processing Pipeline: BullMQ + Redis background workers handling FFmpeg audio splitting and extraction",
+    "Multimodal Transcription & Chunking: Google Gemini audio transcription with word-level timestamps and intelligent semantic chunk grouping",
+    "Vector Search with pgvector: 768-dimensional embeddings via Google Gemini with cosine similarity retrieval in PostgreSQL",
+    "Interactive Video Playback & Timestamp Citations: Real-time AI response streaming with clickable citations that auto-seek the video player",
+    "Resilient Caching & Auth: Read-through Redis caching for conversation messages, Supabase resumable TUS uploads, and Better Auth authentication"
+  ],
+  imageUrl: "https://res.cloudinary.com/dbqe9w6w0/image/upload/v1792270827/Screenshot_From_2026-10-18_02-27-27_skx7up.png",
+  links: {
+    code: [
+      {
+        label: "Github",
+        url: "https://github.com/gouravmalviya445/chat-with-video",
+      }
+    ],
+    live: "https://vidchat.gourav.live/",
+  },
+},
   {
     title: "Event Management System",
     stack: ["Node.js", "Go", "Next.js", "MongoDB", "Razorpay"],
